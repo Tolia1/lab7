@@ -1,0 +1,29 @@
+@model lab7.Models.FileData;
+@{
+    ViewData["Title"] = "Input the data";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm("DownloadFile", "File", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(f => f.Filename)
+        @Html.TextBoxFor(f => f.Filename)
+        @Html.ValidationMessageFor(f => f.Filename, "")
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(f => f.UserName)
+        @Html.TextBoxFor(f => f.UserName)
+        @Html.ValidationMessageFor(f => f.UserName, "")
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(f => f.UserSurname)
+        @Html.TextBoxFor(f => f.UserSurname)
+        @Html.ValidationMessageFor(f => f.UserSurname, "")
+    </div>
+
+    <input type="submit" value="Continue"/>
+}
